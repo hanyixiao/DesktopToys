@@ -14,4 +14,7 @@ time:12:09 - 12:44
 function:Mouse message translate & initGame code
 
 data:2019-2-6
-time:18:03
+time:18:03-19:07
+function:Coding the class IMouseAction IMark Shooter IDrawable 
+
+#the third edition
