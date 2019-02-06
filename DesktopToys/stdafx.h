@@ -34,13 +34,6 @@
 #include <afxcontrolbars.h>     // 功能区和控件条的 MFC 支持
 
 
-
-
-
-
-
-
-
 #ifdef _UNICODE
 #if defined _M_IX86
 #pragma comment(linker,"/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='x86' publicKeyToken='6595b64144ccf1df' language='*'\"")
@@ -50,5 +43,32 @@
 #pragma comment(linker,"/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\"")
 #endif
 #endif
+
+//引入C++标准库
+#include <memory>
+#include <vector>
+#include <list>
+#include <map>
+#include <algorithm>
+#include <string>
+
+#include <assert.h>
+using namespace std;
+
+#include <gdiplus.h>          //引入GDI绘图库
+#include <gdipluseffects.h>
+#pragma comment (lib,"Gdiplus.lib")   //连接GDIplus库
+using namespace Gdiplus;
+
+#include "ScreenTools.h"
+#include "ScopeGuard.h"
+#include "CGame.h"
+extern CGame* g_game;
+#define BACK_GROUND_LAYER RGB(0x00,0x00,0x00)
+//
+//extern CGame * g_game;
+
+
+
 
 

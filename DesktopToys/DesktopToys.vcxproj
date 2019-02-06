@@ -183,8 +183,10 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CGame.h" />
     <ClInclude Include="DesktopToys.h" />
     <ClInclude Include="DesktopToysDlg.h" />
+    <ClInclude Include="GameTimer.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ScopeGuard.h" />
     <ClInclude Include="ScreenTools.h" />
@@ -192,6 +194,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CGame.cpp" />
     <ClCompile Include="DesktopToys.cpp" />
     <ClCompile Include="DesktopToysDlg.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -209,6 +212,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\DesktopToys.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

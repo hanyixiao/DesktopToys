@@ -24,6 +24,10 @@ private:
 	ScopeGuard(ScopeGuard const &); //去掉赋值构造函数
 	ScopeGuard &operator = (ScopeGuard const &); //去掉赋值操作符
 };
+#define SCOPEGUARD_LINENAME_CAT(name, line) name##line
+#define SCOPEGUARD_LINENAME(name, line) SCOPEGUARD_LINENAME_CAT(name, line)
+
+#define ON_SCOPE_EXIT(callback) ScopeGuard SCOPEGUARD_LINENAME(EXIT, __LINE__)(callback)
 
 //使用举例
 /*

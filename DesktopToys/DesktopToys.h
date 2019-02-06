@@ -27,6 +27,10 @@ public:
 // 实现
 
 	DECLARE_MESSAGE_MAP()
+private:
+	ULONG_PTR m_tokenGdiplus;
+	Gdiplus::GdiplusStartupInput input;
+	Gdiplus::GdiplusStartupOutput output;
 };
 
 extern CDesktopToysApp theApp;

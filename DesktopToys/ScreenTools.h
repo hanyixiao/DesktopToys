@@ -160,7 +160,7 @@ public:
 		return bRet;
 	}
 	//获取位图句柄
-	static HBITMAP CopySCreenToBitmap(LPRECT lpRect)
+	static HBITMAP CopyScreenToBitmap(LPRECT lpRect)
 	{
 		HDC hScrDC, hMemDC;
 		HBITMAP  hBitmap, hOldBitmap;
@@ -215,7 +215,7 @@ public:
 		rect.top = 0;
 		rect.right = GetSystemMetrics(SM_CXSCREEN);
 		rect.bottom = GetSystemMetrics(SM_CYSCREEN);
-		return CopySCreenToBitmap(rect);
+		return CopyScreenToBitmap(rect);
 	}
 	//截取指定窗体
 	static HBITMAP PrintWindow(HWND hwnd)
@@ -242,10 +242,19 @@ public:
 	}
 	static void DrawMouse(POINT pnt)
 	{
-		HWND DeskHwnd = ::GetDesktopWindow();
-		HDC DeskDC = ::GetWindowDC(DeskHwnd);
-		int oldRop2 = SetROP2(DeskDC, R2_NOTXORPEN);
-		HPEN newPen = ::CreatePen(0, 1, RGB(255, 0, 0));
-		HGDIOBJ oldPen = ::SelectObject(DeskDC, newPen);
+		HWND DeskHwnd = ::GetDesktopWindow();             //获取桌面句柄
+		HDC DeskDC = ::GetWindowDC(DeskHwnd);             //获取桌面设备句柄
+		int oldRop2 = SetROP2(DeskDC, R2_NOTXORPEN);      
+		HPEN newPen = ::CreatePen(0, 1, RGB(255, 0, 0));  //建立新画柄，载入DeskDC
+		HGDIOBJ oldPen = ::SelectObject(DeskDC, newPen);  //选定画柄，并保存旧的画柄
+		::MoveToEx(DeskDC, pnt.x - 10, pnt.y, NULL);      //在窗口四周画一个方框
+		::LineTo(DeskDC, pnt.x + 10, pnt.y);
+		::MoveToEx(DeskDC, pnt.x, pnt.y + 10, NULL);
+		::LineTo(DeskDC, pnt.x, pnt.y - 10);
+		::SetROP2(DeskDC, oldRop2);                    
+		::SelectObject(DeskDC, oldPen);                   //恢复为旧画柄
+		::DeleteObject(newPen);
+		::ReleaseDC(DeskHwnd, DeskDC);
+		DeskDC = NULL;
 	}
 };
