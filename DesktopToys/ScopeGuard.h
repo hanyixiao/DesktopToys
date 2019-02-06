@@ -25,3 +25,13 @@ private:
 	ScopeGuard &operator = (ScopeGuard const &); //去掉赋值操作符
 };
 
+//使用举例
+/*
+char *pBuf = new char[1024];
+ON_SCOPE_EIXT([&])()
+{
+	if (pBuf) {
+		delete[] pBuf;
+	}
+}
+*/
