@@ -183,6 +183,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CDMenu.h" />
     <ClInclude Include="CGame.h" />
     <ClInclude Include="DesktopToys.h" />
     <ClInclude Include="DesktopToysDlg.h" />
@@ -190,15 +191,19 @@
     <ClInclude Include="IDrawable.h" />
     <ClInclude Include="IMark.h" />
     <ClInclude Include="IMouseAction.h" />
+    <ClInclude Include="MenuItem.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ScopeGuard.h" />
     <ClInclude Include="ScreenTools.h" />
     <ClInclude Include="Shooter.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TipStringChangeColor.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CDMenu.cpp" />
     <ClCompile Include="CGame.cpp" />
+    <ClCompile Include="CMenuItem.cpp" />
     <ClCompile Include="DesktopToys.cpp" />
     <ClCompile Include="DesktopToysDlg.cpp" />
     <ClCompile Include="IDrawable.cpp" />
@@ -220,6 +225,77 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\DesktopToys.ico" />
+    <Image Include="res\Eraser Ed 0.png" />
+    <Image Include="res\Eraser Ed 00.png" />
+    <Image Include="res\Eraser Ed 01.png" />
+    <Image Include="res\Eraser Ed 1.png" />
+    <Image Include="res\Eraser Ed 2.png" />
+    <Image Include="res\Eraser Ed Marks 01.png" />
+    <Image Include="res\Eraser Ed Marks 02.png" />
+    <Image Include="res\Eraser Ed Marks 03.png" />
+    <Image Include="res\Eraser Ed Marks 04.png" />
+    <Image Include="res\Eraser Ed Marks 05.png" />
+    <Image Include="res\Eraser Ed Marks 06.png" />
+    <Image Include="res\Foton The Desktop Hero Fire Path.png" />
+    <Image Include="res\Foton The Desktop Hero Left Fire 00.png" />
+    <Image Include="res\Foton The Desktop Hero Left Fire 01.png" />
+    <Image Include="res\Foton The Desktop Hero Left Fire 02.png" />
+    <Image Include="res\Foton The Desktop Hero Left Fire 03.png" />
+    <Image Include="res\Foton The Desktop Hero Left Fire 04.png" />
+    <Image Include="res\Foton The Desktop Hero Left Fire Marks 0.png" />
+    <Image Include="res\Foton The Desktop Hero Left Fire Marks 1.png" />
+    <Image Include="res\Foton The Desktop Hero Left Fire Marks 2.png" />
+    <Image Include="res\Foton The Desktop Hero Left Fire Marks 3.png" />
+    <Image Include="res\Foton The Desktop Hero Left Fire Marks 4.png" />
+    <Image Include="res\Foton The Desktop Hero Right Fire 00.png" />
+    <Image Include="res\Foton The Desktop Hero Right Fire 01.png" />
+    <Image Include="res\Foton The Desktop Hero Right Fire 02.png" />
+    <Image Include="res\Foton The Desktop Hero Right Fire 03.png" />
+    <Image Include="res\Foton The Desktop Hero Right Fire 04.png" />
+    <Image Include="res\Foton The Desktop Hero 上.png" />
+    <Image Include="res\Foton The Desktop Hero 下.png" />
+    <Image Include="res\Foton The Desktop Hero 右.png" />
+    <Image Include="res\Foton The Desktop Hero 右上.png" />
+    <Image Include="res\Foton The Desktop Hero 右下.png" />
+    <Image Include="res\Foton The Desktop Hero 左.png" />
+    <Image Include="res\Foton The Desktop Hero 左上.png" />
+    <Image Include="res\Foton The Desktop Hero 左下.png" />
+    <Image Include="res\Foton The Desktop Hero 静.png" />
+    <Image Include="res\Menu Center01.png" />
+    <Image Include="res\Menu center02.png" />
+    <Image Include="res\MenuItem00.png" />
+    <Image Include="res\MenuItem01.png" />
+    <Image Include="res\MenuItem02.png" />
+    <Image Include="res\MenuItem03.png" />
+    <Image Include="res\Pablo The Painter 00.png" />
+    <Image Include="res\Pablo The Painter 01.png" />
+    <Image Include="res\Pablo The Painter 02 .png" />
+    <Image Include="res\Pablo The Painter 02.png" />
+    <Image Include="res\Pablo The Painter 03.png" />
+    <Image Include="res\Pablo The Painter 04.png" />
+    <Image Include="res\Pablo The Painter 05 .png" />
+    <Image Include="res\Pablo The Painter 05.png" />
+    <Image Include="res\Pablo The Painter Mark 0.png" />
+    <Image Include="res\Pablo The Painter Mark 1.png" />
+    <Image Include="res\Pablo The Painter Mark 2.png" />
+    <Image Include="res\Pablo The Painter Mark 3.png" />
+    <Image Include="res\Pablo The Painter Mark 4.png" />
+    <Image Include="res\Pablo The Painter Mark 5.png" />
+    <Image Include="res\The Toolbox Mark 01.png" />
+    <Image Include="res\The Toolbox Mark 02.png" />
+    <Image Include="res\The Toolbox Mark 03.png" />
+    <Image Include="res\The Toolbox Mark 04.png" />
+    <Image Include="res\The Toolbox Mark 05.png" />
+    <Image Include="res\The Toolbox Mark 06.png" />
+    <Image Include="res\The Toolbox Mark Saw 01.png" />
+    <Image Include="res\The Toolbox Mark Saw 02.png" />
+    <Image Include="res\The Toolbox Mark Saw 03.png" />
+    <Image Include="res\The Toolbox Mark Saw 04.png" />
+    <Image Include="res\The Toolbox Mark Saw 05.png" />
+    <Image Include="res\The Toolbox Mark Saw 06.png" />
+    <Image Include="res\The Toolbox01.png" />
+    <Image Include="res\The Toolbox02.png" />
+    <Image Include="res\The Toolbox03.png" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="readme.md" />

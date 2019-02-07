@@ -68,6 +68,7 @@ private:
 };
 class CGameTimeVal
 {
+public:
 	explicit CGameTimeVal(size_t timeval = 300)
 		:m_timeval(timeval)
 	{

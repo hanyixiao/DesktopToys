@@ -16,6 +16,9 @@
     <Filter Include="ReadMe">
       <UniqueIdentifier>{7fc2f523-41c5-4ba7-a62f-a4a133e5b6c3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Res">
+      <UniqueIdentifier>{6336362f-afc8-4a2b-a9ac-ab324ea84537}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DesktopToys.h">
@@ -57,6 +60,15 @@
     <ClInclude Include="Shooter.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CDMenu.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TipStringChangeColor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuItem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DesktopToys.cpp">
@@ -83,6 +95,12 @@
     <ClCompile Include="Shooter.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="CDMenu.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CMenuItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DesktopToys.rc">
@@ -97,6 +115,219 @@
   <ItemGroup>
     <Image Include="res\DesktopToys.ico">
       <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\Eraser Ed 00.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Eraser Ed 0.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Eraser Ed 01.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Eraser Ed 1.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Eraser Ed 2.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Eraser Ed Marks 01.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Eraser Ed Marks 02.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Eraser Ed Marks 03.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Eraser Ed Marks 04.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Eraser Ed Marks 05.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Eraser Ed Marks 06.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero Fire Path.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero Left Fire 00.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero Left Fire 01.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero Left Fire 02.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero Left Fire 03.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero Left Fire 04.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero Left Fire Marks 0.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero Left Fire Marks 1.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero Left Fire Marks 2.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero Left Fire Marks 3.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero Left Fire Marks 4.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero Right Fire 00.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero Right Fire 01.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero Right Fire 02.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero Right Fire 03.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero Right Fire 04.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero 静.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero 上.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero 下.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero 右.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero 右上.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero 右下.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero 左.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero 左上.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Foton The Desktop Hero 左下.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Menu Center01.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Menu center02.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\MenuItem00.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\MenuItem01.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\MenuItem02.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\MenuItem03.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Pablo The Painter 00.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Pablo The Painter 01.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Pablo The Painter 02 .png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Pablo The Painter 02.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Pablo The Painter 03.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Pablo The Painter 04.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Pablo The Painter 05 .png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Pablo The Painter 05.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Pablo The Painter Mark 0.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Pablo The Painter Mark 1.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Pablo The Painter Mark 2.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Pablo The Painter Mark 3.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Pablo The Painter Mark 4.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\Pablo The Painter Mark 5.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\The Toolbox Mark 01.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\The Toolbox Mark 02.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\The Toolbox Mark 03.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\The Toolbox Mark 04.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\The Toolbox Mark 05.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\The Toolbox Mark 06.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\The Toolbox Mark Saw 01.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\The Toolbox Mark Saw 02.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\The Toolbox Mark Saw 03.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\The Toolbox Mark Saw 04.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\The Toolbox Mark Saw 05.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\The Toolbox Mark Saw 06.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\The Toolbox01.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\The Toolbox02.png">
+      <Filter>Res</Filter>
+    </Image>
+    <Image Include="res\The Toolbox03.png">
+      <Filter>Res</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>

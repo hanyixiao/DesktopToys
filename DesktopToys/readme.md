@@ -18,3 +18,6 @@ time:18:03-19:07
 function:Coding the class IMouseAction IMark Shooter IDrawable 
 
 #the third edition
+data:2019-2-7
+time:11:51 - 12:28
+achievements:finished the CDMenu.h 
