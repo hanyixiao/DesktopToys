@@ -26,12 +26,12 @@ public:
 		m_rect.Height = height;
 	};
 	//设置中心点
-	void SetCenterPos(float x, float y)
+	void SetCenterPos(const float x,const float y)
 	{
 		PointF ptCenter(x, y);
 		SetCenterPos(ptCenter);
 	};
-	void SetCenterPos(PointF &ptcenter)
+	void SetCenterPos(const PointF &ptcenter)
 	{
 		RectF r = m_rect;
 		r.X = ptcenter.X - r.Width / 2.0f;

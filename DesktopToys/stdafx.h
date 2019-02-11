@@ -65,6 +65,8 @@ using namespace Gdiplus;
 #include "CGame.h"
 extern CGame* g_game;
 #define BACK_GROUND_LAYER RGB(0x00,0x00,0x00)
+#define PI(n) (3.1415926 * n)
+#define Degree2Radian(a)  ((a)*PI(1.0f)/180.0f)
 //
 //extern CGame * g_game;
 

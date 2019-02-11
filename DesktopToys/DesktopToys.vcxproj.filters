@@ -69,6 +69,9 @@
     <ClInclude Include="MenuItem.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Shooter0Mark.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DesktopToys.cpp">
@@ -99,6 +102,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="CMenuItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CShooter0Mark.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

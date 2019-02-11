@@ -1,5 +1,6 @@
 #pragma once
-
+#include "Shooter.h" 
+#include "CDMenu.h"
 class IMark; //向前声明，因为下面要用到该接口类型的指针
 class CGame
 {
@@ -16,15 +17,15 @@ public:
 	bool EnterFrame(DWORD dwTime);
 	//处理鼠标消息
 	//鼠标左键按下
-	void OnLButtonDown(UINT Flags, CPoint point);
-	void OnLButtonUp(UINT Flags, CPoint point);
+	void OnLButtonDown(UINT nFlags, CPoint point);
+	void OnLButtonUp(UINT nFlags, CPoint point);
 	//鼠标左键双击
-	void OnLButtonDblClk(UINT Flags, CPoint point);
-	void OnRButtonDown(UINT Flags, CPoint point);
-	void OnRButtonUp(UINT Flags, CPoint point);
-	void OnRButtonDlbClk(UINT Flags, CPoint point);
+	void OnLButtonDblClk(UINT nFlags, CPoint point);
+	void OnRButtonDown(UINT nFlags, CPoint point);
+	void OnRButtonUp(UINT nFlags, CPoint point);
+	void OnRButtonDlbClk(UINT nFlags, CPoint point);
 	//鼠标移动
-	void OnMouseMove(UINT Flags, CPoint point);
+	void OnMouseMove(UINT nFlags, CPoint point);
 	//按下ESC按键的函数响应
 	BOOL OnESC();
 	//增加一个破坏物
@@ -80,4 +81,7 @@ private:
 	std::vector<std::shared_ptr<IMark>> m_vMarks;
 	//背景图
 	Gdiplus::Bitmap *m_imgBK;
+	//菜单和工具类
+	std::shared_ptr<CDMenu> m_menu;
+	std::shared_ptr<Shooter> m_pTool;
 };

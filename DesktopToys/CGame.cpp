@@ -11,6 +11,7 @@ CGame::CGame(HWND hWnd,float x,float y,float w,float h)
 {
 	//保存全局指针
 	g_game = this;
+	m_menu = std::make_shared<CDMenu>(hWnd);         //菜单初始化
 	{
 		//截图整个屏幕画在自己的窗口上
 		RECT r{ (long)x,(long)y,(long)(x + w),(long)(y + h) };
@@ -34,12 +35,15 @@ bool CGame::EnterFrame(DWORD dwTime)
 }
  
 //鼠标左键按下
-void CGame::OnLButtonDown(UINT Flags, CPoint point)
+void CGame::OnLButtonDown(UINT nFlags, CPoint point)
 {
 	switch(m_eStatus)    //声明并初始化
 	{
 		case CGame::EGameStatusSelect: {
 			//菜单处理阶段
+			if (m_menu->OnLButtonDown(nFlags, point)) {
+				break;
+			}
 			break;
 		}
 		case CGame::EGamestatusNormal: {
@@ -53,11 +57,14 @@ void CGame::OnLButtonDown(UINT Flags, CPoint point)
 	}
 }
 //鼠标左键抬起
-void CGame::OnLButtonUp(UINT Flags, CPoint point)
+void CGame::OnLButtonUp(UINT nFlags, CPoint point)
 {
 	switch (m_eStatus) {
 		case CGame::EGameStatusSelect: {
 			//菜单阶段
+			if (m_menu->OnLButtonUp(nFlags, point)) {
+				break;
+			}
 			break;
 		}
 		case CGame::EGamestatusNormal: {
@@ -70,17 +77,20 @@ void CGame::OnLButtonUp(UINT Flags, CPoint point)
 	}
 }
 //鼠标左键双击
-void CGame::OnLButtonDblClk(UINT Flags, CPoint point)
+void CGame::OnLButtonDblClk(UINT nFlags, CPoint point)
 {
    
 }
 //鼠标右键按下
-void CGame::OnRButtonDown(UINT Flags, CPoint point)
+void CGame::OnRButtonDown(UINT nFlags, CPoint point)
 {
 	switch (m_eStatus)    //声明并初始化
 	{
 		case CGame::EGameStatusSelect: {
 			//菜单处理阶段
+			if (m_menu->OnRButtonDown(nFlags, point)) {
+				break;
+			}
 			break;
 		}
 		case CGame::EGamestatusNormal: {
@@ -94,11 +104,14 @@ void CGame::OnRButtonDown(UINT Flags, CPoint point)
 	}
 }
 //鼠标右键键抬起
-void CGame::OnRButtonUp(UINT Flags, CPoint point)
+void CGame::OnRButtonUp(UINT nFlags, CPoint point)
 {
 	switch (m_eStatus) {
 		case CGame::EGameStatusSelect: {
 			//菜单阶段
+			if (m_menu->OnRButtonUp(nFlags, point)) {
+				break;
+			}
 			break;
 		}
 		case CGame::EGamestatusNormal: {
@@ -189,9 +202,16 @@ void CGame::Draw()
 	{
 		switch (m_eStatus) {
 			case CGame::EGameStatusSelect: {
+				//画菜单
+				if (m_menu) {
+					m_menu->Draw(gh);
+				}
 				break;
 			}
 			case CGame::EGamestatusNormal: {
+				if (m_pTool) {
+				    m_pTool->Draw(gh);
+				}
 				break;
 			}
 			default:
