@@ -38,6 +38,10 @@ data:2019-2-10
 time:21:30-22:02
 function:finish the CDMenu.cpp functions
 
-data:109-2-11
+data:2019-2-11
 time:14:13-14:44
 fucntion:finished the class CShooter0Mark
+
+data:2019-2-11
+time:20:30-21:30
+function:began to realize the class CShooter0;
