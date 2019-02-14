@@ -7,7 +7,8 @@
 	碎裂效果的父类，是一个抽象类
 */
 #include "IDrawable.h"
-class IMark :public IDrawable
+class IMark :
+	public IDrawable
 {
 public:
 	IMark();

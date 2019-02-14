@@ -63,6 +63,7 @@ using namespace Gdiplus;
 #include "ScreenTools.h"
 #include "ScopeGuard.h"
 #include "CGame.h"
+#include "Shooter0Mark.h"
 extern CGame* g_game;
 #define BACK_GROUND_LAYER RGB(0x00,0x00,0x00)
 #define PI(n) (3.1415926 * n)

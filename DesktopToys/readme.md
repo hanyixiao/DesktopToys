@@ -45,3 +45,25 @@ fucntion:finished the class CShooter0Mark
 data:2019-2-11
 time:20:30-21:30
 function:began to realize the class CShooter0;
+
+data:2019-2-13
+time:13:20-14:37
+function:start the project Shooter0 but there was
+something wrong the bullets did not exisitence and 
+the background is not the Screen;
+
+data:2019-2-13
+time:20:51-21£º58
+function:find only one bug,the background bug,but the bullets bug
+didn't find
+
+data:2019-2-13
+time:13:44-14:47
+function:find the last bug of bullets,My the if words made the bug;
+
+#the forth edition
+data:2019-2-14 Valentine's day Single dog gets everything
+time:18:23-20:10
+function:finished the class CShooter1&&CShooter1Mark,There are some bugs
+details:can not draw with OnLButtonDown&&OnRButtonDown the bullets Draw function
+did not work;

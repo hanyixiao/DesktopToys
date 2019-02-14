@@ -28,6 +28,28 @@ public:
 	void OnMouseMove(UINT nFlags, CPoint point);
 	//按下ESC按键的函数响应
 	BOOL OnESC();
+	//设置进入游戏阶段，并设置工具
+	void SetStatusNormal(std::shared_ptr<Shooter> pTool,
+		bool bCursor = false)
+	{
+		m_pTool = pTool;
+		//设置游戏工具
+		m_eStatus = EGameStatusNormal;
+		//隐藏鼠标
+		if (bCursor) {
+			while (true) {
+				int i = ShowCursor(FALSE);
+				TRACE("隐藏光标 %d \r\n", i);
+				if (i < 0) {
+					break;
+				}
+			}
+		}
+		else {
+			int i = ShowCursor(bCursor);
+			TRACE("显示光标 %d \n", i);
+		}
+	}
 	//增加一个破坏物
 	void Append(std::shared_ptr<IMark> pMark)
 	{
@@ -59,7 +81,7 @@ private:
 	float m_height;
 	//游戏阶段
 	//游戏只分为两个阶段，菜单阶段和游戏阶段
-	typedef enum EGameStatus {EGameStatusSelect,EGamestatusNormal}EGameStatus;
+	typedef enum EGameStatus {EGameStatusSelect,EGameStatusNormal}EGameStatus;
 	EGameStatus m_eStatus{ EGameStatusSelect };//声明并初始化
 private:
 	//客户区大小
@@ -80,7 +102,7 @@ private:
 	//破坏窗口留下的东西
 	std::vector<std::shared_ptr<IMark>> m_vMarks;
 	//背景图
-	Gdiplus::Bitmap *m_imgBK;
+	Gdiplus::Bitmap *m_imgBk;
 	//菜单和工具类
 	std::shared_ptr<CDMenu> m_menu;
 	std::shared_ptr<Shooter> m_pTool;

@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "CDMenu.h"
 #include "Shooter.h"
-
-
+#include "Shooter0.h"
+#include "CShooter1.h"
 CDMenu::CDMenu(HWND hWnd):m_hWnd(hWnd)
 {
 	//载入子菜单
@@ -184,7 +184,8 @@ bool CDMenu::OnLButtonDown(UINT nFlags, CPoint point)
 	if (m_item0->OnLButtonDown(nFlags, point)) {
 		//结束动画
 		EndAnimate();
-		AfxMessageBox(TEXT("设置进入游戏阶段，并设置当前工具为CShooter0"));
+		g_game->SetStatusNormal(make_shared<CShooter0>(), true);
+	//	AfxMessageBox(TEXT("设置进入游戏阶段，并设置当前工具为CShooter0"));
 		return true;
 	}
 	if (m_item1->OnLButtonDown(nFlags, point)) {
@@ -193,19 +194,21 @@ bool CDMenu::OnLButtonDown(UINT nFlags, CPoint point)
 		//获取屏幕高度
 		RECT rc;
 		GetClientRect(m_hWnd, &rc);
-		AfxMessageBox(TEXT("设置游戏进入阶段，并设置当前工具CShooter1"));
+		g_game->SetStatusNormal(make_shared<CShooter1>(static_cast<int>
+			(rc.bottom-rc.top)), false);
+		//AfxMessageBox(TEXT("设置游戏进入阶段，并设置当前工具CShooter1"));
 		return true;
 	}
 	if (m_item2->OnLButtonDown(nFlags, point)) {
 		//结束动画
 		EndAnimate();
-		AfxMessageBox(TEXT("设置当前工具为CShooter2"));
+		//AfxMessageBox(TEXT("设置当前工具为CShooter2"));
 		return true;
 	}
 	if (m_item3->OnLButtonDown(nFlags, point)) {
 		//结束动画
 		EndAnimate();
-		AfxMessageBox(TEXT("设置当前工具为CShooter3"));
+		//AfxMessageBox(TEXT("设置当前工具为CShooter3"));
 		return true;
 	}
 	return false;

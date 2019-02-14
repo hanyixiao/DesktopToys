@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "CGame.h"
 #include "SCreenTools.h"
+#include "Shooter0.h"
 
 CGame::CGame(HWND hWnd,float x,float y,float w,float h)
 	: m_hWnd(hWnd)
@@ -16,7 +17,7 @@ CGame::CGame(HWND hWnd,float x,float y,float w,float h)
 		//截图整个屏幕画在自己的窗口上
 		RECT r{ (long)x,(long)y,(long)(x + w),(long)(y + h) };
 		HBITMAP hBmp = CScreenTools::CopyScreenToBitmap(&r);
-		m_imgBK = Bitmap::FromHBITMAP(hBmp, NULL);  //调用GDI图库对背景图进行保存
+		m_imgBk = Bitmap::FromHBITMAP(hBmp, NULL);  //调用GDI图库对背景图进行保存
 	}
 	//获取窗口大小
 	GetClientRect(m_hWnd, &m_rcClient);
@@ -46,8 +47,9 @@ void CGame::OnLButtonDown(UINT nFlags, CPoint point)
 			}
 			break;
 		}
-		case CGame::EGamestatusNormal: {
+		case CGame::EGameStatusNormal: {
 			//游戏阶段
+			m_pTool->OnLButtonDown(nFlags, point);
 			break;
 		}
 		default: {
@@ -67,8 +69,9 @@ void CGame::OnLButtonUp(UINT nFlags, CPoint point)
 			}
 			break;
 		}
-		case CGame::EGamestatusNormal: {
+		case CGame::EGameStatusNormal: {
 			//游戏阶段
+			m_pTool->OnLButtonUp(nFlags, point);
 			break;
 		}
 		default: {
@@ -93,8 +96,9 @@ void CGame::OnRButtonDown(UINT nFlags, CPoint point)
 			}
 			break;
 		}
-		case CGame::EGamestatusNormal: {
+		case CGame::EGameStatusNormal: {
 			//游戏阶段
+			m_pTool->OnRButtonDown(nFlags, point);
 			break;
 		}
 		default: {
@@ -114,8 +118,9 @@ void CGame::OnRButtonUp(UINT nFlags, CPoint point)
 			}
 			break;
 		}
-		case CGame::EGamestatusNormal: {
+		case CGame::EGameStatusNormal: {
 			//游戏阶段
+			m_pTool->OnRButtonUp(nFlags, point);
 			break;
 		}
 		default: {
@@ -128,13 +133,14 @@ void CGame::OnRButtonDlbClk(UINT Flags, CPoint point)
 
 }
 //鼠标移动
-void CGame::OnMouseMove(UINT Flags, CPoint point)
+void CGame::OnMouseMove(UINT nFlags, CPoint point)
 {
 	switch (m_eStatus) {
 		case CGame::EGameStatusSelect: {
 			break;
 		}
-		case CGame::EGamestatusNormal: {
+		case CGame::EGameStatusNormal: {
+			m_pTool->OnMouseMove(nFlags, point);
 			break;
 		}
 		default: {
@@ -150,7 +156,7 @@ BOOL CGame::OnESC()
 			//当前没在游戏，不处理
 			return FALSE;
 		}
-		case CGame::EGamestatusNormal: {
+		case CGame::EGameStatusNormal: {
 			m_eStatus = EGameStatusSelect;
 			//显示鼠标
 			{
@@ -198,6 +204,29 @@ void CGame::Draw()
 	clr.SetFromCOLORREF(BACK_GROUND_LAYER);
 	gh.Clear(clr);
 	gh.ResetClip();
+	gh.DrawImage(m_imgBk, m_x, m_y, m_width, m_height);
+	//合并背景图和不动的元素
+	{
+		if (!m_vMarks.empty()) {
+			Graphics gh(m_imgBk);
+			for (auto ptr : m_vMarks) {
+				if (!ptr->IsChanging()) {
+					ptr->Draw(gh);
+				}
+			}
+			//删除不再变化的对象///
+			//                  \\\\\\///
+			//                  |//  // |       
+			//                  |../ ..|
+   			//                   |fuck|
+			                      //
+			/////////////////////////////////
+			m_vMarks.erase(std::remove_if(m_vMarks.begin(),
+				m_vMarks.end(),
+				[](auto &lns)->bool {return !lns->IsChanging(); }),
+				m_vMarks.end());
+		}
+	}
 	//根据当前游戏的阶段，绘制不同的东西
 	{
 		switch (m_eStatus) {
@@ -208,7 +237,7 @@ void CGame::Draw()
 				}
 				break;
 			}
-			case CGame::EGamestatusNormal: {
+			case CGame::EGameStatusNormal: {
 				if (m_pTool) {
 				    m_pTool->Draw(gh);
 				}
