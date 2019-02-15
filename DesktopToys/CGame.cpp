@@ -205,6 +205,7 @@ void CGame::Draw()
 	gh.Clear(clr);
 	gh.ResetClip();
 	gh.DrawImage(m_imgBk, m_x, m_y, m_width, m_height);
+	
 	//合并背景图和不动的元素
 	{
 		if (!m_vMarks.empty()) {
@@ -226,6 +227,10 @@ void CGame::Draw()
 				[](auto &lns)->bool {return !lns->IsChanging(); }),
 				m_vMarks.end());
 		}
+	}
+	//画出继续变动的源速
+	for (auto ptr : m_vMarks) {
+		ptr->Draw(gh);
 	}
 	//根据当前游戏的阶段，绘制不同的东西
 	{

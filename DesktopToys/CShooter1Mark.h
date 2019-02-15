@@ -1,8 +1,8 @@
 #pragma once
 #include "IMark.h"
 
-class CShooter1Mark:
-	public IMark
+class CShooter1Mark
+	: public IMark
 {
 public:
 	CShooter1Mark(float x,float y,int index = 0);

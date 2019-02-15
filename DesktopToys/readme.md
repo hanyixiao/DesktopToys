@@ -67,3 +67,16 @@ time:18:23-20:10
 function:finished the class CShooter1&&CShooter1Mark,There are some bugs
 details:can not draw with OnLButtonDown&&OnRButtonDown the bullets Draw function
 did not work;
+
+data:2019-2-15 
+time:morning 
+function:find the bug of why my bullets didn't work;
+
+#the sixth edition
+date:2019-2-15
+time:2hours?
+function: finish two class;
+
+data:2019-2-15
+time:19:04-20:00
+function:a lot of bugs oh   

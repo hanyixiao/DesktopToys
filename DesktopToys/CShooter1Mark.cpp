@@ -41,7 +41,7 @@ void CShooter1Mark::Draw(Gdiplus::Graphics &gh)
 {
 	gh.DrawImage(m_img[m_index], GetRect());
 }
-bool CShooter1Mark::IsChanging()const
+bool CShooter1Mark::IsChanging() const
 {
 	return  false;
 }

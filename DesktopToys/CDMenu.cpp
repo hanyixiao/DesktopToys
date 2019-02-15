@@ -3,6 +3,8 @@
 #include "Shooter.h"
 #include "Shooter0.h"
 #include "CShooter1.h"
+#include "CShooter2.h"
+
 CDMenu::CDMenu(HWND hWnd):m_hWnd(hWnd)
 {
 	//载入子菜单
@@ -195,13 +197,14 @@ bool CDMenu::OnLButtonDown(UINT nFlags, CPoint point)
 		RECT rc;
 		GetClientRect(m_hWnd, &rc);
 		g_game->SetStatusNormal(make_shared<CShooter1>(static_cast<int>
-			(rc.bottom-rc.top)), false);
-		//AfxMessageBox(TEXT("设置游戏进入阶段，并设置当前工具CShooter1"));
+			(rc.bottom-rc.top)), FALSE);
+//		AfxMessageBox(TEXT("设置游戏进入阶段，并设置当前工具CShooter1"));
 		return true;
 	}
 	if (m_item2->OnLButtonDown(nFlags, point)) {
 		//结束动画
 		EndAnimate();
+		g_game->SetStatusNormal(make_shared<CShooter2>(), TRUE);
 		//AfxMessageBox(TEXT("设置当前工具为CShooter2"));
 		return true;
 	}

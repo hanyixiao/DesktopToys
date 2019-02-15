@@ -122,8 +122,8 @@ bool CShooter1::OnMouseMove(UINT nFlags, CPoint point)
 		m_status = 5;
 		//判断是否需要增加一个标记
 		RectF rc;
-		rc.X = m_mousePos.X;
-		rc.Y = m_mousePos.Y;
+		rc.X = m_mousePosLast.X;
+		rc.Y = m_mousePosLast.Y;
 		rc.Height = 1;
 		rc.Width = 1;
 		if (!rc.Contains(m_mousePos)) {

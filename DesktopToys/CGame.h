@@ -1,6 +1,7 @@
 #pragma once
 #include "Shooter.h" 
 #include "CDMenu.h"
+#include "CShooter1Mark.h"
 class IMark; //向前声明，因为下面要用到该接口类型的指针
 class CGame
 {
