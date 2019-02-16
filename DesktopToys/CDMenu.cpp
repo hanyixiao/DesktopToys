@@ -4,7 +4,7 @@
 #include "Shooter0.h"
 #include "CShooter1.h"
 #include "CShooter2.h"
-
+#include "CShooter3.h"
 CDMenu::CDMenu(HWND hWnd):m_hWnd(hWnd)
 {
 	//载入子菜单
@@ -211,6 +211,7 @@ bool CDMenu::OnLButtonDown(UINT nFlags, CPoint point)
 	if (m_item3->OnLButtonDown(nFlags, point)) {
 		//结束动画
 		EndAnimate();
+		g_game->SetStatusNormal(make_shared<CShooter3>(), TRUE);
 		//AfxMessageBox(TEXT("设置当前工具为CShooter3"));
 		return true;
 	}

@@ -193,6 +193,8 @@
     <ClInclude Include="CShooter1Mark.h" />
     <ClInclude Include="CShooter2.h" />
     <ClInclude Include="CShooter2Mark.h" />
+    <ClInclude Include="CShooter3.h" />
+    <ClInclude Include="CShooter3Mark.h" />
     <ClInclude Include="DesktopToys.h" />
     <ClInclude Include="DesktopToysDlg.h" />
     <ClInclude Include="GameTimer.h" />
@@ -218,6 +220,8 @@
     <ClCompile Include="CShooter1Mark.cpp" />
     <ClCompile Include="CShooter2.cpp" />
     <ClCompile Include="CShooter2Mark.cpp" />
+    <ClCompile Include="CShooter3.cpp" />
+    <ClCompile Include="CShooter3Mark.cpp" />
     <ClCompile Include="Shooter0.cpp" />
     <ClCompile Include="CShooter0Mark.cpp" />
     <ClCompile Include="DesktopToys.cpp" />

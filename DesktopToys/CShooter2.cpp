@@ -35,7 +35,7 @@ void DrawImageRotate(PointF mousePt, Graphics &gh,
 		//1平移变化移动原点位置到坐标点
 		gh.TranslateTransform(center.X, center.Y);
 		//2.旋转变换:使坐标轴旋转degree度
-		gh.RotateTransform(degree);
+		gh.RotateTransform(-degree);
 		//3.恢复原点
 		gh.TranslateTransform(-center.X, -center.Y);
 	});
@@ -56,43 +56,64 @@ void CShooter2::Draw(Gdiplus::Graphics &gh)
 	switch (m_status) {
 		//锤子
 		case EStatus::EStatusHammer: {
-			switch (m_eStatusHammer) {
-				//鼠标左键第一次单击：发射子弹，同时锤子图片发生变化
-				case EStatusHammer::EStatusHammerDownFirst: {
-					g_game->Append(std::make_shared<CShooter2Mark>
-						(m_mousePos.X, m_mousePos.Y));
-					m_eStatusHammer = EStatusHammer::EStatusHammerDown;
+				switch (m_eStatusHammer) {
+					//鼠标左键第一次单击：发射子弹，同时锤子图片发生变化
+					case EStatusHammer::EStatusHammerDownFirst: {
+						g_game->Append(std::make_shared<CShooter2Mark>
+							(m_mousePos.X, m_mousePos.Y));
+						m_eStatusHammer = EStatusHammer::EStatusHammerDown;
+					}
+					//鼠标左键单击
+					case EStatusHammer::EStatusHammerDown: {
+						auto img = m_img1;
+						RectF rc;
+						rc.X = m_mousePos.X;
+						rc.Y = m_mousePos.Y;
+						rc.Width = (float)img->GetWidth();
+						rc.Height =(float) img->GetHeight();
+						gh.DrawImage(img, rc);
+						break;
+					}
+					//鼠标左键抬起
+					case EStatusHammer::EStatusHammerUp: {
+						auto img = m_img2;
+						RectF rc;
+						rc.X = m_mousePos.X;
+						rc.Y = m_mousePos.Y;
+						rc.Width = (float)img->GetWidth();
+						rc.Height = (float)img->GetHeight();
+						gh.DrawImage(img, rc);
+						break;
+					}
+					default:
+						break;
 				}
-				//鼠标左键单击
-				case EStatusHammer::EStatusHammerDown: {
-					auto img = m_img1;
-					RectF rc;
-					rc.X = m_mousePos.X;
-					rc.Y = m_mousePos.Y;
-					rc.Width = (float)img->GetWidth();
-					rc.Height =(float) img->GetHeight();
-					gh.DrawImage(img, rc);
-					break;
-				}
-				//鼠标左键抬起
-				case EStatusHammer::EStatusHammerUp: {
-					auto img = m_img2;
-					RectF rc;
-					rc.X = m_mousePos.X;
-					rc.Y = m_mousePos.Y;
-					rc.Width = (float)img->GetWidth();
-					rc.Height = (float)img->GetHeight();
-					gh.DrawImage(img, rc);
-					break;
-				}
-				default:
-					break;
-			}
+				break;
+		}
+		case EStatus::EStatusSaw: {
+				// 电锯图片
+				auto img = m_img0;
+				// 计算电锯的位置,和大小
+				RectF rc;
+				rc.X = m_sawPos.X;
+				rc.Y = m_sawPos.Y;
+				rc.Width = (float)img->GetWidth();
+				rc.Height = (float)img->GetHeight();
+				// 绘制电锯图片
+				DrawImageRotate(m_sawPos, gh, img, m_sawDegree);
 
-			break;
+				switch (m_eStatusSaw) {
+					case EStatusSaw::EStatusSawStart:
+					{
+						//do nothing
+					}
+					case EStatusSaw::EStatusMoving: {
+						
+					}
 				}
-		default:
-			break;
+		}
+   default:
+	    break;
 	}
 
 }

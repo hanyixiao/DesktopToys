@@ -80,3 +80,11 @@ function: finish two class;
 data:2019-2-15
 time:19:04-20:00
 function:a lot of bugs oh   
+
+data:2019-2-16
+time:11:55
+function: I find the bug why the hammer rotate 
+
+data:2019-2-16
+time:17:12
+function:finish the eraser class, bugs not deal with;

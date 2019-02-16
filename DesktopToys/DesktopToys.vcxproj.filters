@@ -87,6 +87,12 @@
     <ClInclude Include="CShooter2.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CShooter3Mark.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CShooter3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DesktopToys.cpp">
@@ -135,6 +141,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="CShooter2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CShooter3Mark.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CShooter3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
