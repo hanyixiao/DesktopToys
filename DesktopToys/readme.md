@@ -85,6 +85,7 @@ data:2019-2-16
 time:11:55
 function: I find the bug why the hammer rotate 
 
+#the finnal edition
 data:2019-2-16
 time:17:12
 function:finish the eraser class, bugs not deal with;

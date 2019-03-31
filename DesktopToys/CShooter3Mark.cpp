@@ -22,6 +22,9 @@ CShooter3Mark::CShooter3Mark(float x, float y)
 		dy.m_speed = PointF(float(rand() % 10 - 5), float(rand() % 10 - 5));
 
 		//Œª÷√
+		dy.m_pos.X = x + float(rand() % 80 - 40);
+		dy.m_pos.Y = y + float(rand() % 80 - 40);
+
 		dy.m_dir = Degree2Radian(rand() % 360);
 		// «∑Òœ‘ æ
 		dy.m_bShow = true;
